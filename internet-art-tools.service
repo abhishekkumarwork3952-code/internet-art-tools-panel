@@ -1,0 +1,18 @@
+[Unit]
+Description=Internet Art Tools Django Application
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/internet_art_login/AI Mailer
+Environment="PATH=/home/ubuntu/internet_art_login/AI Mailer/venv/bin"
+Environment="SECRET_KEY=your-production-secret-key-here"
+Environment="DEBUG=False"
+Environment="ALLOWED_HOSTS=your-domain.com,your-ec2-ip"
+ExecStart=/home/ubuntu/internet_art_login/AI Mailer/venv/bin/gunicorn --workers 3 --bind 127.0.0.1:8000 internet_art_tools.wsgi:application
+ExecReload=/bin/kill -s HUP $MAINPID
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

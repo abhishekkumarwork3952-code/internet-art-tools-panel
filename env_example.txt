@@ -1,0 +1,10 @@
+# Django Settings
+SECRET_KEY=your-secret-key-here
+DEBUG=True
+ALLOWED_HOSTS=localhost,127.0.0.1
+
+# Database (for production, use PostgreSQL)
+# DATABASE_URL=postgresql://user:password@localhost:5432/dbname
+
+# Static Files
+STATIC_ROOT=/var/www/static/
