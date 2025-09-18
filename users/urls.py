@@ -11,4 +11,5 @@ urlpatterns = [
     path('enable/<str:user_id>/', views.enable_user, name='enable_user'),
     path('disable/<str:user_id>/', views.disable_user, name='disable_user'),
     path('delete/<str:user_id>/', views.delete_user, name='delete_user'),
+    path('force-logout/<str:user_id>/', views.force_logout, name='force_logout'),
 ]
